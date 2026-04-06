@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 """
 This module provides a function to convert
 a floating-point number into its string representation.
