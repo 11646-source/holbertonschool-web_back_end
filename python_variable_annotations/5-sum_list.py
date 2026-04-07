@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-
+"""Module for summing a list."""
 
 from typing import List
 def sum_list(input_list: List[float]) -> float:
