@@ -1,11 +1,17 @@
 #!/usr/bin/env python3
 """Module for a tuple"""
-from typing import Union, Tuple
+from typing import Tuple
 
 
-def to_kv(k: str, v: Union[int, float]) -> Tuple[str, float]:
+def to_kv(k: str, v: float) -> Tuple[str, float]:
     """
-    Takes a string k and an int or float v,
-    returns a tuple 
+    Return a tuple with the string k and the square of v.
+
+    Args:
+        k (str): The key string.
+        v (float): The value to square.
+
+    Returns:
+        Tuple[str, float]: A tuple containing k and v squared.
     """
-    return (k, float(v ** 2))
+    return (k, v ** 2)
