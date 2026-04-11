@@ -5,7 +5,7 @@ Module representing a function for a basic async program.
 
 import asyncio
 import random
-
+import importlib.util
 
 async def wait_random(max_delay: int = 10) -> float:
     """

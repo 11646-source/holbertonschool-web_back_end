@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 """
-Module with async routines using wait_random.
+Async routine that spawns wait_random multiple times.
 """
 
 import asyncio
 from typing import List
 
-# Import wait_random from 0-basic_async.py using __import__
+# Import wait_random from your previous file
 wait_random = __import__('0-basic_async').wait_random
 
 
