@@ -1,4 +1,4 @@
-#!/usr/env python3
+#!/usr/bin/env python3
 """
 Module represent a function for a basic async program
 """
