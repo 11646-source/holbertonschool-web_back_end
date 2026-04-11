@@ -5,7 +5,9 @@ Module with async routines using wait_random.
 
 import asyncio
 from typing import List
-from previous_file import wait_random   # adjust import to your actual filename
+
+# Import wait_random from 0-basic_async.py using __import__
+wait_random = __import__('0-basic_async').wait_random
 
 
 async def wait_n(n: int, max_delay: int) -> List[float]:
@@ -22,7 +24,7 @@ async def wait_n(n: int, max_delay: int) -> List[float]:
         List[float]: List of delays in ascending order.
     """
     tasks = [asyncio.create_task(wait_random(max_delay)) for _ in range(n)]
-    delays = []
+    delays: List[float] = []
     for completed in asyncio.as_completed(tasks):
         delay = await completed
         delays.append(delay)
