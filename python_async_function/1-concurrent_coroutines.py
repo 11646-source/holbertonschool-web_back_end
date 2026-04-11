@@ -5,8 +5,8 @@ Async routine that spawns wait_random multiple times.
 
 import asyncio
 from typing import List
-import importlib.util
-# Import wait_random from your previous file
+
+# Import wait_random from the previous file (0-basic_async.py)
 wait_random = __import__('0-basic_async').wait_random
 
 
