@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
+"""
+A module that create asyncio tasks and run asynchronous
+"""
 import asyncio
-from typing import Union
-from 0_basic_async_syntax import wait_random  # adjust import path if needed
+wait_random = __import__(' 0_basic_async_syntax import wait_random')  # adjust import path if needed
 
 def task_wait_random(max_delay: int) -> asyncio.Task:
     """
