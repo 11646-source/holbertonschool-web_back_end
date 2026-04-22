@@ -1,7 +1,13 @@
-import sqlite3
+import psycopg2
+from psycopg2 import sql
 
-# Connect to database (creates my_db.db if it doesn't exist)
-conn = sqlite3.connect("my_db.db")
+conn = psycopg2.connect(dbname="postgres", user="your_user", password="your_password")
+conn.autocommit = True
+cur = conn.cursor()
+
+cur.execute("SELECT 1 FROM pg_database WHERE datname='my_db'")
+if not cur.fetchone():
+    cur.execute(sql.SQL("CREATE DATABASE {}").format(sql.Identifier("my_db")))
 
 print("Database 'my_db' is ready to use.")
 
