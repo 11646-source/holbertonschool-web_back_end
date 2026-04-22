@@ -1,57 +1,6 @@
-#!/usr/bin/env node
+// Connect to MongoDB
+use admin;
 
-/**
- * 0-list_databases
- * Script to list all databases in MongoDB
- */
-
-const { MongoClient } = require("mongodb");
-
-async function main() {
-  const uri = "mongodb://localhost:27017"; // Update if needed
-  const client = new MongoClient(uri);
-
-  try {
-    await client.connect();
-    const adminDb = client.db().admin();
-    const result = await adminDb.listDatabases();
-
-    console.log("Databases:");
-    result.databases.forEach(db => console.log(` - ${db.name}`));
-  } catch (err) {
-    console.error("Error listing databases:", err);
-  } finally {
-    await client.close();
-  }
-}
-
-main();
-#!/usr/bin/env node
-
-/**
- * 0-list_databases
- * Script to list all databases in MongoDB
- */
-
-const { MongoClient } = require("mongodb");
-
-async function main() {
-  const uri = "mongodb://localhost:27017"; // Update if needed
-  const client = new MongoClient(uri);
-
-  try {
-    await client.connect();
-    const adminDb = client.db().admin();
-    const result = await adminDb.listDatabases();
-
-    console.log("Databases:");
-    result.databases.forEach(db => console.log(` - ${db.name}`));
-  } catch (err) {
-    console.error("Error listing databases:", err);
-  } finally {
-    await client.close();
-  }
-}
-
-main();
+// List all databases
+show dbs;
 
