@@ -1,0 +1,12 @@
+// Switch to (or create) the database my_db
+use my_db;
+
+// Optionally create a collection to initialize the database
+db.createCollection("example_collection");
+
+// Insert a sample document to ensure the database exists
+db.example_collection.insertOne({
+    name: "Test User",
+    role: "developer"
+});
+
