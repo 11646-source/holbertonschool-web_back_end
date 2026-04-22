@@ -1,0 +1,5 @@
+-- Create the database if it doesn't exist
+CREATE DATABASE IF NOT EXISTS my_database;
+
+-- Switch to using that database
+USE my_database;
