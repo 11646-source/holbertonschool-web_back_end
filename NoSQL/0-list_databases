@@ -3,3 +3,4 @@ use admin;
 
 // List all databases
 show dbs;
+
