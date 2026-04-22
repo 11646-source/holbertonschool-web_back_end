@@ -4,3 +4,4 @@ import sqlite3
 conn = sqlite3.connect("my_db.db")
 
 print("Database 'my_db' is ready to use.")
+
