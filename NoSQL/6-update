@@ -1,0 +1,7 @@
+// file: update_school.js
+
+// Update all documents with name = "Holberton school"
+db.school.updateMany(
+  { name: "Holberton school" },
+  { $set: { address: "972 Mission street" } }
+);
