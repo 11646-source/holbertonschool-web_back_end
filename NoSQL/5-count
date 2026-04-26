@@ -1,2 +1,2 @@
 //Insert a document that displays number collection school:
-print("Number of documents:", db.school.countDocuments()):
+print(db.school.countDocuments());
