@@ -1,4 +1,7 @@
+// file: 6-update
+
 db.school.updateMany(
   { name: "Holberton school" },
   { $set: { address: "972 Mission street" } }
 );
+
