@@ -1,2 +1,3 @@
-//Insert a document that displays number collection school:
+// file: 5-count
+
 print(db.school.countDocuments());
