@@ -1,7 +1,9 @@
-// file: 6-update
-
-db.school.updateMany(
+// Update all documents in the "school" collection
+// where the name is exactly "Holberton school"
+db.school.update(
   { name: "Holberton school" },
-  { $set: { address: "972 Mission street" } }
-);
 
+  { $set: { address: "972 Mission street" } },
+
+  { multi: true }  // apply the update to ALL matching documents
+)
