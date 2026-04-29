@@ -1,10 +1,10 @@
 function taskBlock(trueOrFalse) {
-  let task = "I prefer const";
-  const block = "I prefer block";
+  let task = "I prefer const";   // outer block-scoped variable
+  const block = "I prefer block"; // outer block-scoped constant
 
   if (trueOrFalse) {
-    let task = "I prefer let";
-    const block = "I prefer block-scoping";
+    let task = "I prefer let";   // inner block-scoped variable (different scope)
+    const block = "I prefer block-scoping"; // inner block-scoped constant
     console.log(task);  // "I prefer let"
     console.log(block); // "I prefer block-scoping"
   }
