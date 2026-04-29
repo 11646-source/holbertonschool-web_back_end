@@ -1,11 +1,10 @@
 export default function taskBlock(trueOrFalse) {
-  var task = false;
-  var task2 = true;
+  let task = false;
+  let task2 = true;
 
   if (trueOrFalse) {
-    // don’t redeclare with var, just reassign
-    task = true;
-    task2 = false;
+    let task = true;   // scoped only inside this block
+    let task2 = false; // scoped only inside this block
   }
 
   return [task, task2];
