@@ -8,4 +8,3 @@ function taskNext() {
   nextVariable = "I have changed!";
   return nextVariable;
 }
-
