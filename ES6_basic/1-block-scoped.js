@@ -3,8 +3,8 @@ export default function taskBlock(trueOrFalse) {
   let task2 = true;
 
   if (trueOrFalse) {
-    let task = true;   // scoped only to this block
-    let task2 = false; // scoped only to this block
+    task = true;   // update outer variable
+    task2 = false; // update outer variable
   }
 
   return [task, task2];
