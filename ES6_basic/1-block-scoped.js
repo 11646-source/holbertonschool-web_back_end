@@ -1,14 +1,11 @@
-function taskBlock(trueOrFalse) {
-  let task = "I prefer const";   // outer block-scoped variable
-  const block = "I prefer block"; // outer block-scoped constant
+export default function taskBlock(trueOrFalse) {
+  let task = false;
+  let task2 = true;
 
   if (trueOrFalse) {
-    let task = "I prefer let";   // inner block-scoped variable (different scope)
-    const block = "I prefer block-scoping"; // inner block-scoped constant
-    console.log(task);  // "I prefer let"
-    console.log(block); // "I prefer block-scoping"
+    let task = true;   // scoped only to this block
+    let task2 = false; // scoped only to this block
   }
 
-  console.log(task);  // "I prefer const"
-  console.log(block); // "I prefer block"
+  return [task, task2];
 }
