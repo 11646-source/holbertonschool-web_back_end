@@ -1,8 +1,10 @@
 export default function getSanFranciscoDescription() {
-  const name = "San Francisco";
-  const state = "California";
-  const population = "884,363";
-  const year = "2020";
+  const year = 2017;
+  const budget = {
+    income: '$119,868',
+    gdp: '$154.2 billion',
+    capita: '$178,479',
+  };
 
-  return `${name} is a city in ${state} with a population of ${population} as of ${year}.`;
+  return `As of ${year}, it was the seventh-highest income county in the United States, with a per capita personal income of ${budget.income}. As of 2015, San Francisco proper had a GDP of ${budget.gdp}, and a GDP per capita of ${budget.capita}.`;
 }
