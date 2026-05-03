@@ -1,8 +1,8 @@
 export default function getBudgetObject(income,gdp, capita) {
 	const budget = {
 		income,
-		gpd,
-		capita
+		gdp,
+		capita,
 	};
 
 	return budget;
