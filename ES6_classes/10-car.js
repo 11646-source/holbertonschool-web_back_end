@@ -5,7 +5,7 @@ export default class Car {
     this._color = color;
   }
 
-  // This controls what constructor is used when cloning
+ 
   static get [Symbol.species]() {
     return this;
   }
