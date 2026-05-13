@@ -1,5 +1,5 @@
-export default function displayMessage(message) {
-	console.log(message);
-}
+// 0-console.js
 
-module.exports = displayMessage;
+export default function displayMessage(message) {
+  console.log(message);
+}
