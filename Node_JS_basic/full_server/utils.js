@@ -1,42 +1,29 @@
-#!/usr/bin/node
-
-// contains the function readDatabase to read the CSV file and return data in the desired format
-// full_server/utils.js
 import fs from 'fs';
-import csv from 'csv-parse';
 
-export const readDatabase = (filePath) => {
+export function readDatabase(filePath) {
   return new Promise((resolve, reject) => {
-    const students = {
-      CS: [],
-      SWE: []
-    };
-
     fs.readFile(filePath, 'utf8', (err, data) => {
       if (err) {
-        return reject(new Error('Cannot load the database'));
+        reject(new Error('Cannot load the database'));
+        return;
       }
 
-      csv.parse(data, {
-        columns: true,
-        trim: true
-      }, (parseErr, records) => {
-        if (parseErr) {
-          return reject(new Error('Cannot load the database'));
-        }
+      const lines = data.trim().split('\n');
+      const studentsPerField = {};
 
-        records.forEach((record) => {
-          if (record.Name && record.Programme) {
-            if (record.Programme === 'CS') {
-              students.CS.push(record.Name);
-            } else if (record.Programme === 'SWE') {
-              students.SWE.push(record.Name);
+      // Skip header line (i = 1)
+      for (let i = 1; i < lines.length; i += 1) {
+        if (lines[i].trim()) {
+          const [firstname, , , field] = lines[i].split(',');
+          if (firstname && field) {
+            if (!studentsPerField[field]) {
+              studentsPerField[field] = [];
             }
+            studentsPerField[field].push(firstname);
           }
-        });
-
-        resolve(students);
-      });
+        }
+      }
+      resolve(studentsPerField);
     });
   });
-};
+}
