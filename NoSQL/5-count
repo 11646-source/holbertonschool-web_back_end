@@ -1,4 +1,2 @@
-// file: main_1 (or 5-count)
-
-// Print the number of documents in the "school" collection
-print(db.school.countDocuments());
+//script that displays the number of documents in the collection school
+db.school.count()
