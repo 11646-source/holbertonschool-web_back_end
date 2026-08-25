@@ -1,6 +1,2 @@
-// Connect to MongoDB
-use admin;
-
-// List all databases
-show dbs;
-
+// script that lists all databases
+show dbs
